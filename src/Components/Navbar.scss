@@ -1,0 +1,42 @@
+/* src/components/Navbar.scss */
+$navbar-bg-color: #333;
+$navbar-link-color: white;
+$navbar-link-hover-color: #cccccc;
+$logout-bg-color: #ff4d4d; // Set a different background color for Logout
+
+.navbars {
+  background-color: $navbar-bg-color;
+  padding: 1rem;
+
+  .navbar-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+
+    .navbar-item {
+      color: $navbar-link-color;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        font-weight: bold;
+        padding: 0.5rem 1rem; // Add some padding for better touch target
+
+        &:hover {
+          color: $navbar-link-hover-color;
+        }
+
+        &.logout-link { // Targeting the Logout link specifically
+          background-color: $logout-bg-color; // Background for Logout
+          border-radius: 5px; // Rounded corners for better appearance
+        }
+
+        &.active {
+          font-weight: bold;
+          color: #cccccc; // Change color to indicate active
+          border-bottom: 2px solid #cccccc; // Adding a border for active state
+        }
+      }
+    }
+  }
+}

@@ -1,78 +1,77 @@
+/* Container Styles */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+  background-color: transparent; /* Light background */
+}
+
+/* Login Container */
 .login-container {
-    width: 350px;
-    margin: 100px auto;
-    padding: 30px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  
-    h1 {
-      margin-bottom: 20px;
-      font-size: 1.8em;
-      color: #333;
-    }
-  }
-  
-  .login-form {
-    .form-group {
-      margin-bottom: 20px;
-      text-align: left;
-  
-      label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-        color: #555;
-      }
-  
-      .form-input {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 1em;
-        transition: border-color 0.3s ease;
-  
-        &:focus {
-          outline: none;
-          border-color: #007bff;
-        }
-      }
-  
-      select.form-input {
-        appearance: none;
-        background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="none" stroke="%23000" stroke-width=".7" d="M2 0L0 2h4z"/></svg>') no-repeat right 10px center;
-        background-size: 12px;
-      }
-    }
-  
-    .error-message {
-      color: #ff4d4d;
-      font-size: 0.9em;
-      margin-top: -10px;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-  
-    .login-button {
-      width: 100%;
-      padding: 12px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-  
-      &:hover {
-        background-color: #0056b3;
-      }
-  
-      &:focus {
-        outline: none;
-      }
-    }
-  }
-  
+  background-color: #ffffff; /* White background for form */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 100%;
+  max-width: 400px; /* Set a max-width for responsiveness */
+  text-align: center;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block; /* Ensures the label takes up the full width */
+  font-weight: bold; /* Optionally make the label bold */
+  margin-bottom: 8px; /* Adds spacing between label and input */
+}
+
+/* Form Input Fields */
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #007bff; /* Highlight on focus */
+  outline: none;
+}
+
+/* Error Message */
+.error-message {
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Button Styles */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #0056b3; /* Darken on hover */
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 28px;
+}

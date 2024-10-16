@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import Modal from 'react-modal'; // Import Modal from react-modal
+import Modal from 'react-modal';
 import { useNavigate } from 'react-router-dom';
 import './AdminDashboard.scss';
 
 
 const AdminDashboard = () => {
   const [bookingData, setBookingData] = useState([]);
-  const [selectedBooking, setSelectedBooking] = useState(null); // State to manage selected booking for modal
-    const [modalIsOpen, setModalIsOpen] = useState(false); // State to control modal visibility
+  const [selectedBooking, setSelectedBooking] = useState(null);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
     const navigate = useNavigate(); 
 
   useEffect(() => {
@@ -25,17 +25,14 @@ const AdminDashboard = () => {
     setSelectedBooking(null);
     };
     
-    const handleLogout = () => {
-        navigate('/login'); // Redirect to login page
-      };
+    const handleLogout = () => navigate('/login');
 
   return (
-    <div>
+    <div className='container-fluid'>
 <div className="admin-dashboard">
     <h2 className="dashboard-title">Admin Dashboard</h2>
     <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
 
-  {/* Other content */}
   {bookingData.length === 0 ? (
     <p className="no-data-message">No booking data available.</p>
   ) : (
@@ -68,8 +65,6 @@ const AdminDashboard = () => {
   )}
 </div>
 
-
-      {/* Modal for displaying detailed booking data */}
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Booking Details">
         <h2 className="modal-title">Booking Details</h2>
         {selectedBooking && (

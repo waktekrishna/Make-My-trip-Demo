@@ -1,10 +1,9 @@
 import React from "react";
-import { useNavigate, NavLink ,Link } from 'react-router-dom';
+import { useNavigate, NavLink, Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 import './Navbar.scss';
 
-
-
-const Navbar = () => {
+const Navbar = ({ username }) => {
     return (
       <nav className="navbars">
       <ul className="navbar-list">
@@ -17,8 +16,11 @@ const Navbar = () => {
         <li className="navbar-item">
           <NavLink to="/cabs" activeClassName="active-link">Cabs</NavLink>
         </li>
-        <li className="navbar-item">
-          <NavLink to="/login" className="logout-link" activeClassName="active-link">Logout</NavLink>
+          <li className="navbar-item">
+          <span className="username">{username}</span>
+        <Button component={NavLink} to="/login" className="logout-link" variant="contained"  color="primary">
+          Logout
+        </Button>
         </li>
       </ul>
     </nav>

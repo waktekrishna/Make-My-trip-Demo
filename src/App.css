@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.app-container {
+  background-image: url('https://cdn.thestandard.co.zw/images/thestandard/uploads/2023/01/LmSaHCbMy2hM3HxI7FE2AXuFOUxCMdWclLt7G08u.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* Full viewport height */
+  width: 100%; /* Full width */
+}
+  

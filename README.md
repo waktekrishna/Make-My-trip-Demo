@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+#Live Hosting of project
+https://make-my-trip-demo-jmt2-1a4rw9zvm-krishnas-projects-4bf44210.vercel.app/flights
+
 ## Available Scripts
 
 In the project directory, you can run:

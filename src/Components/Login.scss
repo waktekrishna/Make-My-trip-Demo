@@ -1,36 +1,32 @@
-/* Container Styles */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full height of the viewport */
-  background-color: transparent; /* Light background */
+  height: 100vh; 
+  background-color: transparent; 
 }
 
-/* Login Container */
 .login-container {
-  background-color: #ffffff; /* White background for form */
+  background-color: #ffffff;
   padding: 40px;
   border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 400px; /* Set a max-width for responsiveness */
+  max-width: 400px;
   text-align: center;
 }
 
-/* Form Group */
 .form-group {
   margin-bottom: 20px;
   text-align: left;
 }
 
 label {
-  display: block; /* Ensures the label takes up the full width */
-  font-weight: bold; /* Optionally make the label bold */
-  margin-bottom: 8px; /* Adds spacing between label and input */
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
-/* Form Input Fields */
 .form-input {
   width: 100%;
   padding: 10px;
@@ -41,18 +37,16 @@ label {
 }
 
 .form-input:focus {
-  border-color: #007bff; /* Highlight on focus */
+  border-color: #007bff;
   outline: none;
 }
 
-/* Error Message */
 .error-message {
   color: #ff4d4d;
   font-size: 14px;
   margin-top: 10px;
 }
 
-/* Button Styles */
 .login-button {
   width: 100%;
   padding: 12px;
@@ -67,7 +61,7 @@ label {
 }
 
 .login-button:hover {
-  background-color: #0056b3; /* Darken on hover */
+  background-color: #0056b3;
 }
 
 h1 {

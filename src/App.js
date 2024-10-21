@@ -6,10 +6,8 @@ import Hotels from "./Components/Hotels";
 import Cabs from "./Components/Cabs";
 import Login from "./Components/Login";
 import { CircularProgress } from '@mui/material';
-
 import './App.css'; 
 const AdminDashboard = React.lazy(() => import('./Components/AdminDashboard'));
-
 
 const App = () => {
   const navigate = useNavigate();
@@ -19,7 +17,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(false); // Change this logic as per your needs
+    setIsLoading(false);
   }, []);
 
   const [flightData, setFlightData] = useState({

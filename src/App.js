@@ -1,10 +1,12 @@
-import React, { useState , Suspense} from "react";
-import { Routes, Route, useNavigate, useLocation  } from "react-router-dom";
+import React, { useState , Suspense, useEffect} from "react";
+import { Routes, Route, useNavigate, useLocation , Navigate  } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Flights from "./Components/Flights";
 import Hotels from "./Components/Hotels";
 import Cabs from "./Components/Cabs";
 import Login from "./Components/Login";
+import { CircularProgress } from '@mui/material';
+
 import './App.css'; 
 const AdminDashboard = React.lazy(() => import('./Components/AdminDashboard'));
 
@@ -12,6 +14,13 @@ const AdminDashboard = React.lazy(() => import('./Components/AdminDashboard'));
 const App = () => {
   const navigate = useNavigate();
   const location = useLocation();
+
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(false); // Change this logic as per your needs
+  }, []);
 
   const [flightData, setFlightData] = useState({
     fromLocation: '',
@@ -155,27 +164,22 @@ const App = () => {
   
   return (
     <div className="app-container">
-      {location.pathname !== '/login' && location.pathname !== '/admin-dashboard' && <Navbar />}
-
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/admin-dashboard" element={<AdminDashboard />} />
-          <Route path="/flights"
-            element={
-              <Flights flightData={flightData} setFlightData={setFlightData} errors={errors.flightErrors} onNext={handleNextFromFlights}/>
-            }/>
-          <Route path="/hotels"
-            element={
-              <Hotels hotelData={hotelData} setHotelData={setHotelData} errors={errors.hotelErrors} onNext={handleNextFromHotels} onBack={() => navigate("/flights")}/>
-            }/>
-          <Route path="/cabs"
-            element={
-              <Cabs cabData={cabData} setCabData={setCabData} errors={errors.cabErrors} onSubmit={handleSubmitCabs} onBack={() => navigate("/hotels")}/>
-            }/>
-          <Route path="/" element={<Login />} />
-        </Routes>
-      </Suspense>
+      {!isLoading && location.pathname !== '/login' && location.pathname !== '/admin-dashboard' && <Navbar />}
+      
+      {isLoading ? (
+        <CircularProgress />
+      ) : (
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/admin-dashboard" element={<AdminDashboard />} />
+            <Route path="/flights" element={<Flights flightData={flightData} setFlightData={setFlightData} errors={errors.flightErrors} onNext={handleNextFromFlights} />} />
+            <Route path="/hotels" element={<Hotels hotelData={hotelData} setHotelData={setHotelData} errors={errors.hotelErrors} onNext={handleNextFromHotels} onBack={() => navigate("/flights")} />} />
+            <Route path="/cabs" element={<Cabs cabData={cabData} setCabData={setCabData} errors={errors.cabErrors} onSubmit={handleSubmitCabs} onBack={() => navigate("/hotels")} />} />
+            <Route path="/" element={<Navigate to="/login" />} />
+          </Routes>
+        </Suspense>
+      )}
     </div>
   );
 };

@@ -35,7 +35,7 @@ const Flights = ({ flightData, setFlightData, errors, onNext }) => {
       <div className="flight-form">
         <h2>Book Flights</h2>
   
-  <div className="form-group">
+  {/* <div className="form-group">
   <label className="mb-2">Travel Type:</label>
   <div className="d-flex align-items-center">
     <div className="me-3">
@@ -51,7 +51,7 @@ const Flights = ({ flightData, setFlightData, errors, onNext }) => {
       </label>
     </div>
   </div>
-</div>
+</div> */}
 
         <div className="form-group">
           <label>From Location</label>
